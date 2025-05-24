@@ -42,6 +42,10 @@ h2{
   font-weight: 500;
 }
 
+a{
+  cursor: pointer;
+}
+
 .navbar{
   display: grid;
   grid-template-columns: max-content max-content max-content;
@@ -61,7 +65,6 @@ h2{
 .navLinks a:hover{
   color: var(--accent-pink);
   text-decoration: underline;
-  cursor: pointer;
 }
 
 .decorLine{
@@ -87,14 +90,14 @@ h2{
 }
 
 .colC{
-  /* display: flex;
+  display: flex;
   align-items: center;
-  justify-content: center; */
+  justify-content: center;
 }
 
 img{
-  width: 334px;
-  padding-left: 1rem;
+  width: 366px;
+  /* padding-left: 1rem; */
   padding-right: 1rem;
 }
 
@@ -105,26 +108,18 @@ p{
   margin: 0;
 }
 
-.decorBorder{
-  width: auto;
-  height: auto;
-  display: block;
-}
-
-/* .decorBorder:nth-child(1){
-  display: block;
-} */
-
-.decorBorder:nth-child(2){
-  transform: rotate(180deg);
-}
-
 .info{
   /* background-color: var(--off-pink); */
   max-height: 112px;
   word-wrap: break-word;
   box-shadow: 5px 5px 7px var(--shadow-blue);
   padding: 1rem;
+  transition: transform .3s; /* Animation */
+
+}
+
+.info:hover{
+  transform: scale(1.05);
 }
 
 .recentCard a{
@@ -138,7 +133,44 @@ p{
 }
 
 .recentCard{
-  cursor: pointer;
   margin: 1rem;
   width: 320px
+}
+
+.rowB{
+  position: fixed;
+  display: grid;
+  grid-template-columns: max-content max-content max-content max-content;
+  align-items: center;
+  /* justify-content: center; */
+  /* padding: 0.5rem; */
+  box-sizing: border-box;
+  gap: 1rem;
+  margin-left: 2.5625rem;
+  bottom: 0.5rem;
+}
+
+.rowB img{
+  width: 72px;
+  opacity: 0.8;
+  padding: 0;
+  transition: transform 0.3s;
+}
+
+.rowB img:hover{
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.rowB h2{
+  margin: 0;
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.rowB a{
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
