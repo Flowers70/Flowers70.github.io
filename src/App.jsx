@@ -3,16 +3,20 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+const underConstruction = () => {
+  alert("This site is still undergoing construction. I appreciate your patience and hope you have a great day! ❤️");
+};
+
 function Navbar(){
   return(
     <>
       <div className='navbar'>
         <div className='decorLine'></div>
-        <h1>Jacinth Boggess</h1>
+        <a><h1>Jacinth Boggess</h1></a>
         <div className='navLinks'>
-          <a>Portfolio</a>
-          <a>Articles</a>
-          <a>Recipes</a>
+          <a onClick={underConstruction}>Portfolio</a>
+          <a onClick={underConstruction}>Articles</a>
+          <a onClick={underConstruction}>Recipes</a>
         </div>
       </div>
     </>
@@ -21,7 +25,7 @@ function Navbar(){
 
 function RecentCard({background = "#ffffff", section = "Portfolio", title = "Take Action!", description = ""}){
   return(
-    <>
+    <a onClick={underConstruction}>
       <div className='recentCard'>
         <a>{section}</a>
         <div style={{backgroundColor: background}} className='info'>
@@ -29,7 +33,7 @@ function RecentCard({background = "#ffffff", section = "Portfolio", title = "Tak
           <p>{description}</p>
         </div>
       </div>
-    </>
+    </a>
   )
 }
 
@@ -55,10 +59,14 @@ function App() {
           </div>         
         </div>
         <div className='colC'>
-          <img src="/decorBorder.png" className='decorBorder'></img>
-          <img src="/jacinth-jbu-grad.jpg"></img>
-          <img src="/decorBorder.png" className='decorBorder'></img>
+          <img src="/Jacinth-JBU-Grad-wDecor.png"></img>
         </div>
+      </div>
+      <div className='rowB'>
+        <h2>Find me on:</h2>
+        <a href="https://www.linkedin.com/in/jacinth-boggess" target="_blank"><img src="/LinkedIn-Logo.png"></img></a>
+        <a href="https://github.com/Flowers70" target="_blank"><img src="/GitHub-Logo.png"></img></a>
+        <a href="https://www.youtube.com/@Jacinth-Boggess" target="_blank"><img src="/YouTube-Logo.png"></img></a>
       </div>
     </>
   )
