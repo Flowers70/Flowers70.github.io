@@ -19,14 +19,14 @@ function Navbar(){
   );
 }
 
-function RecentCard(){
+function RecentCard({background = "#ffffff", section = "Portfolio", title = "Take Action!", description = ""}){
   return(
     <>
       <div className='recentCard'>
-        <a>Portfolio</a>
-        <div className='info'>
-          <h3>Take Action!</h3>
-          <p>A to-do app developed using Angular & Express JS</p>
+        <a>{section}</a>
+        <div style={{backgroundColor: background}} className='info'>
+          <h3>{title}</h3>
+          <p>{description}</p>
         </div>
       </div>
     </>
@@ -42,7 +42,9 @@ function App() {
       <div className='body'>
         <div className='colA'>
           <h2>Recent</h2>
-          <RecentCard />
+          <RecentCard background="#DC566C" description="A to-do app developed using Angular & Express JS" />
+          <RecentCard background="#F7926E" section="Articles" title="The Difference Between Agile and Kanban" description="May 23, 2025" />
+          <RecentCard background="#FCC183" section="Recipes" title="Arepas" description="A mouthwatering Columbian food that is a family favorite" />
         </div>
         <div className='colB'>
           <div>
