@@ -3,6 +3,8 @@
   --black: #39040E;
   --accent-pink: #D8425B;
   --off-pink: #DC566C;
+  --orange: #F7926E;
+  --golden-yellow: #FCC183;
   --shadow-blue: #D4E4ED;
 }
 
@@ -72,7 +74,7 @@ h2{
   /* background-color: lightblue; */
   display: grid;
   height: calc(100vh - 6.1875rem - 2.5625rem);
-  grid-template-columns: auto auto max-content;
+  grid-template-columns: max-content auto max-content;
   margin-left: 2.5625rem;
   margin-right: 2.5625rem;
 }
@@ -81,7 +83,7 @@ h2{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding: 2rem;
 }
 
 .colC{
@@ -92,12 +94,13 @@ h2{
 
 img{
   width: 334px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 p{
   font-size: 16px;
   line-height: 28px;
-  width: 432px;
   align-self: center;
   margin: 0;
 }
@@ -116,20 +119,16 @@ p{
   transform: rotate(180deg);
 }
 
-.colA{
-  width: 320px;
-}
-
 .info{
-  background-color: var(--off-pink);
-  height: auto;
+  /* background-color: var(--off-pink); */
+  max-height: 112px;
   word-wrap: break-word;
   box-shadow: 5px 5px 7px var(--shadow-blue);
   padding: 1rem;
 }
 
-.info a{
-  font-weight: 500;
+.recentCard a{
+  font-weight: 500 !important;
   font-size: 16px;
   line-height: 30px;
 }
@@ -140,4 +139,6 @@ p{
 
 .recentCard{
   cursor: pointer;
+  margin: 1rem;
+  width: 320px
 }
