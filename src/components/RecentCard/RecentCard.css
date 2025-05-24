@@ -1,0 +1,30 @@
+.info{
+    /* background-color: var(--off-pink); */
+    max-height: 112px;
+    word-wrap: break-word;
+    box-shadow: 5px 5px 7px var(--shadow-blue);
+    padding: 1rem;
+    transition: transform .3s; /* Animation */
+  
+  }
+  
+  .info:hover{
+    transform: scale(1.05);
+  }
+  
+  .recentCard h2{
+    font-weight: 500 !important;
+    font-size: 16px;
+    line-height: 30px;
+    margin: 0;
+    color: var(--black);
+  }
+  
+  .info p{
+    width: 100%;
+  }
+  
+  .recentCard{
+    margin: 1rem;
+    width: 320px
+  }
