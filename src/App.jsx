@@ -45,7 +45,7 @@ function App() {
         <div className='colC'>
           <img src="/Jacinth-JBU-Grad-wDecor.png"></img>
         </div>
-        <div>
+        <div className='colA'>
           <h2>Recent</h2>
           <RecentCard background="#DC566C" description="A to-do app developed using Angular & Express JS" />
           <RecentCard background="#F7926E" section="Articles" title="The Difference Between Agile and Kanban" description="May 23, 2025" />

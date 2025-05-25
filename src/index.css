@@ -140,6 +140,11 @@ p{
     /* justify-content: center; */
   }
 
+  .navbar a{
+    width: 100%;
+    text-align: center;
+  }
+
   .decorLine{
     width: 100%;
     height: auto;
@@ -154,11 +159,34 @@ p{
   }
 
   .navLinks{
-    display: none;
+    display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto auto auto;
     margin: 0;
-    gap: 0.5rem;
+    gap: 0;
+    color: var(--black);
+    width: 100%;
+  }
+
+  .navLinks a{
+    width: 100%;
+    text-align: center;
+    padding: 0.25rem;
+  }
+
+  .navLinks a:nth-child(1){
+    background-color: #DC566C;
+  }
+
+  .navLinks a:nth-child(2){
+    background-color: var(--orange);
+  }
+
+  .navLinks a:nth-child(3){
+    background-color: var(--golden-yellow);
+  }
+
+  .navLinks a:hover{
     color: var(--black);
   }
 

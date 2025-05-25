@@ -50,7 +50,7 @@ img{
   }
 
   .colB{
-    min-height: calc(100svh - 122px);
+    min-height: calc(100svh - 1.75rem - 2.3125rem - 1.1875rem - 1.25rem - 2px);
   }
 
   .body-desktop{
@@ -58,7 +58,9 @@ img{
   }
 
   .body-mobile{
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
 }
