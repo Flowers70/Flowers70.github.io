@@ -29,7 +29,7 @@ function App({aboutMe = ""}) {
           </div>         
         </div>
         <div className='colC'>
-          <img src="/Jacinth-JBU-Grad-wDecor.png"></img>
+          <img src="/images/Jacinth-JBU-Grad-wDecor.png"></img>
         </div>
       </div>
 
@@ -43,7 +43,7 @@ function App({aboutMe = ""}) {
           </div>         
         </div>
         <div className='colC'>
-          <img src="/Jacinth-JBU-Grad-wDecor.png"></img>
+          <img src="/images/Jacinth-JBU-Grad-wDecor.png"></img>
         </div>
         <div className='colA'>
           <h2>Recent</h2>
