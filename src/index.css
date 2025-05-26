@@ -65,6 +65,7 @@ p{
   grid-template-columns: max-content max-content max-content;
   /* align-items: center; */
   gap: 1.1875rem;
+  box-shadow: 0 5px 15px var(--white);
 }
 
 .navLinks{
@@ -102,6 +103,10 @@ p{
   bottom: 0.5rem;
 }
 
+.footer h2{
+  display: block;
+}
+
 .footer img{
   width: 72px;
   opacity: 0.8;
@@ -137,6 +142,11 @@ p{
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: -webkit-sticky; /* for Safari */
+    position: sticky;
+    top: 0;
+    align-self: flex-start; /* <-- this is the fix */
+    background-color: var(--white);
     /* justify-content: center; */
   }
 
@@ -196,6 +206,16 @@ p{
 
   .mobile{
     display: auto;
+  }
+
+  .footer{
+    position: relative;
+    margin: 1.5rem;
+    justify-content: center;
+  }
+
+  .footer h2{
+    display: none;
   }
   
 }
