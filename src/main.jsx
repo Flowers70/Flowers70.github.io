@@ -55,7 +55,7 @@ function Footer(){
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Navbar />
-    <App />
+    <App aboutMe='As an aspiring Computer Scientist with experience in full stack development, I am eager to help others through the application of my knowledge. I enjoy the required challenge of continuous learning accompanied by rapidly evolving technologies. Having graduated from John Brown University in December 2024 and three months of experience in my first corporate job I am excited to explore the many doors that open as I grow in expertise. Due to a recent elimination of my position, I have been laid off, however, I look forward to seeing how God will use this moment to bless others. As of now, I am looking for an opportunity to apply my technical skills and gain invaluable insights from experience individuals. I appreciate the time you have taken to read this and hope you have a great day! '/>
     <Footer />
   </StrictMode>,
 )
