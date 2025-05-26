@@ -147,6 +147,7 @@ p{
     top: 0;
     align-self: flex-start; /* <-- this is the fix */
     background-color: var(--white);
+    overflow: hidden;
     /* justify-content: center; */
   }
 
