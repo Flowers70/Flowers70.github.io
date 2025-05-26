@@ -1,7 +1,7 @@
 .body{
   /* background-color: lightblue; */
   display: grid;
-  height: calc(100vh - 6.1875rem - 2.5625rem);
+  /* height: calc(100vh - 6.1875rem - 2.5625rem); */
   grid-template-columns: max-content auto max-content;
   margin-left: 2.5625rem;
   margin-right: 2.5625rem;
