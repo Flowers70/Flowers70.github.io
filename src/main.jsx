@@ -2,14 +2,12 @@ import { StrictMode, useState, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import { readFromFile } from './utils/fileUtils'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
+// import { readFromFile } from './utils/fileUtils'
 
 // const constAboutMe = readFromFile("/aboutMe.txt");
 
 function Root(){
-  const [aboutMeContent, setAboutMeContent] = useState("");
-
-  readFromFile('/data/aboutMe.txt', setAboutMeContent);
   
   const underConstruction = () => {
     alert("This site is still undergoing construction. I appreciate your patience and hope you have a great day! ❤️");
@@ -26,22 +24,22 @@ function Root(){
       <>
         <div className='navbar desktop'>
           <div className='decorLine'></div>
-          <a><h1>Jacinth Boggess</h1></a>
+          <Link to="/"><h1>Jacinth Boggess</h1></Link>
           <div className='navLinks'>
-            <a onClick={underConstruction}>Portfolio</a>
-            <a onClick={underConstruction}>Articles</a>
-            <a onClick={underConstruction}>Recipes</a>
+            <Link to="/portfolio">Portfolio</Link>
+            <Link to="/articles">Articles</Link>
+            <Link to="/recipes">Recipes</Link>
           </div>
         </div>
   
         <div className='navbar mobile'>
-          <a><h1>Jacinth Boggess</h1></a>
+        <Link to="/"><h1>Jacinth Boggess</h1></Link>
           <div className='decorLine'>
             <a onClick={toggleDisplay}>Navigation</a>
             <div style={{display: isVisible ? 'grid' : 'none'}} className='navLinks'>
-              <a onClick={underConstruction}>Portfolio</a>
-              <a onClick={underConstruction}>Articles</a>
-              <a onClick={underConstruction}>Recipes</a>
+              <Link to="/portfolio">Portfolio</Link>
+              <Link to="/articles">Articles</Link>
+              <Link to="/recipes">Recipes</Link>
             </div>
           </div>
         </div>
@@ -62,9 +60,11 @@ function Root(){
 
   return(
     <>
-      <Navbar />
-      <App aboutMe={aboutMeContent}/>
-      <Footer />
+      <Router basename='/'>
+        <Navbar />
+        <App/>
+        <Footer />
+      </Router>
     </>
   )
 }
