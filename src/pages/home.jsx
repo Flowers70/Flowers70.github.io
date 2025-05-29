@@ -14,8 +14,8 @@ export function Home({content = ""}){
         <div>
             <h2>Recent</h2>
             <RecentCard background="#DC566C" description="A to-do app developed using Angular & Express JS" />
-            <RecentCard background="#F7926E" section="Articles" title="The Difference Between Agile and Kanban" description="May 23, 2025" />
-            <RecentCard background="#FCC183" section="Recipes" title="Arepas" description="A mouthwatering Columbian food that is a family favorite" />
+            <RecentCard background="#F7926E" section="Articles" title="The Difference Between Agile and Kanban" link="/articles" description="May 23, 2025" />
+            <RecentCard background="#FCC183" section="Recipes" title="Arepas" link="/recipes" description="A mouthwatering Columbian food that is a family favorite" />
         </div>
         <div className='colB'>
             <div>
