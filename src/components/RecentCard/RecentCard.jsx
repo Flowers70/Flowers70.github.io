@@ -1,12 +1,13 @@
 import './RecentCard.css';
+import { Link } from 'react-router-dom'
 
 const underConstruction = () => {
     alert("This site is still undergoing construction. I appreciate your patience and hope you have a great day! ❤️");
 };
 
-export function RecentCard({background = "#ffffff", section = "Portfolio", title = "Take Action!", description = ""}){
+export function RecentCard({background = "#ffffff", section = "Portfolio", link = "/portfolio", title = "Take Action!", description = ""}){
     return(
-        <a onClick={underConstruction}>
+        <Link to={link}>
         <div className='recentCard'>
             <h2>{section}</h2>
             <div style={{backgroundColor: background}} className='info'>
@@ -14,6 +15,6 @@ export function RecentCard({background = "#ffffff", section = "Portfolio", title
             <p>{description}</p>
             </div>
         </div>
-        </a>
+        </Link>
     );
 }
