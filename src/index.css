@@ -108,6 +108,11 @@ button:hover{
   text-decoration: underline;
 }
 
+.navLinks .active{
+  color: var(--accent-pink);
+  text-decoration: underline;
+}
+
 .decorLine{
   width: 1.375rem;
   height: 6.1875rem;

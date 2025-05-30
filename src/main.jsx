@@ -2,7 +2,7 @@ import { StrictMode, useState, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+import { BrowserRouter as Router, NavLink } from 'react-router-dom'
 // import { readFromFile } from './utils/fileUtils'
 
 // const constAboutMe = readFromFile("/aboutMe.txt");
@@ -24,22 +24,22 @@ function Root(){
       <>
         <div className='navbar desktop'>
           <div className='decorLine'></div>
-          <Link to="/"><h1>Jacinth Boggess</h1></Link>
+          <NavLink className={({ isActive }) => isActive ? 'active' : ''} to="/"><h1>Jacinth Boggess</h1></NavLink>
           <div className='navLinks'>
-            <Link to="/portfolio">Portfolio</Link>
-            <Link to="/articles">Articles</Link>
-            <Link to="/recipes">Recipes</Link>
+            <NavLink className={({ isActive }) => isActive ? 'active' : ''} to="/portfolio">Portfolio</NavLink>
+            <NavLink className={({ isActive }) => isActive ? 'active' : ''} to="/articles">Articles</NavLink>
+            <NavLink className={({ isActive }) => isActive ? 'active' : ''} to="/recipes">Recipes</NavLink>
           </div>
         </div>
   
         <div className='navbar mobile'>
-        <Link to="/"><h1>Jacinth Boggess</h1></Link>
+        <NavLink className={({ isActive }) => isActive ? 'active' : ''} to="/"><h1>Jacinth Boggess</h1></NavLink>
           <div className='decorLine'>
             <a onClick={toggleDisplay}>Navigation</a>
             <div style={{display: isVisible ? 'grid' : 'none'}} className='navLinks'>
-              <Link to="/portfolio">Portfolio</Link>
-              <Link to="/articles">Articles</Link>
-              <Link to="/recipes">Recipes</Link>
+              <NavLink className={({ isActive }) => isActive ? 'active' : ''} to="/portfolio">Portfolio</NavLink>
+              <NavLink className={({ isActive }) => isActive ? 'active' : ''} to="/articles">Articles</NavLink>
+              <NavLink className={({ isActive }) => isActive ? 'active' : ''} to="/recipes">Recipes</NavLink>
             </div>
           </div>
         </div>
