@@ -1,4 +1,4 @@
-import { RecipeCard } from "../components/RecentCard/RecipeCard";
+import { RecipeCard } from "../components/RecipeCard/RecipeCard";
 import './recipes.css'
 
 export function Recipes(){
@@ -6,7 +6,7 @@ export function Recipes(){
         <>
             <div className="recipes">
                 <div className="spotlight">
-                    <div>
+                    <div className="titleDate">
                         <h2>Arepas</h2>
                         <div>May 27, 2025</div>
                     </div>

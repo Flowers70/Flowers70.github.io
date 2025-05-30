@@ -1,12 +1,27 @@
 .recipes{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: max-content auto;
     margin-left: 2.5625rem;
     margin-right: 2.5625rem;
 }
 
 .spotlight{
     width: 500px;
+}
+
+.titleDate{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.titleDate h2{
+    margin: 0;
+}
+
+.titleDate div{
+    text-align: right;
 }
 
 .spotlight img{
@@ -25,4 +40,6 @@ img{
     grid-template-rows: auto auto;
     margin-top: calc(24px + 40px);
     grid-gap: 2rem;
+    justify-content: center;
+
 }
