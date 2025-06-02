@@ -1,4 +1,5 @@
 import { ProjectCard } from "../components/ProjectCard/ProjectCard";
+import { Link } from "react-router-dom";
 
 export function Portfolio(){
     return (
@@ -11,7 +12,7 @@ export function Portfolio(){
                     </div>
                     <img src="/images/Take_Action.png"></img>
                     <p>A to-do app developed using Angular & Express JS</p>
-                    <button>Learn More</button>
+                    <Link to="/take_action"><button>Learn More</button></Link>
                 </div>
                 <div className="gallery">
                     <ProjectCard />
