@@ -1,0 +1,116 @@
+.portfolio-box{
+    margin-top: 13px;
+    margin-left: 40px;
+    margin-right: 40px;
+    display: grid;
+    grid-template-columns: auto auto;
+    height: 506px;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.portfolio-info{
+    display: grid;
+    grid-template-columns: 26px auto;
+    gap: 29px;
+    width: 690px;
+    position: relative;
+}
+
+.portfolio-content{
+    display: flex;
+    flex-direction: column;
+    height: 506px;
+}
+
+.portfolio-content p{
+    height: 100%;
+    margin-bottom: 36px;
+    overflow: auto;
+    
+    position: relative;
+
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.portfolio-content button{
+    box-shadow: 0px -10px 40px 20px var(--white);
+}
+
+.portfolio-content p::-webkit-scrollbar{
+    display: none;
+}
+
+.portfolio-info button{
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 29px - 26px);
+}
+
+.portfolio-heading{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
+
+.portfolio-heading div{
+    text-align: right;
+}
+
+.portfolio-decor-line{
+    width: 26px;
+    height: auto;
+    z-index: 1000;
+    background-color: var(--green);
+}
+
+
+.portfolio-additional-info{
+    height: 100%;
+}
+
+.portfolio-additional-info li{
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.portfolio-additional-info a{
+    color: var(--accent-pink);
+    text-decoration: underline;
+}
+
+.portfolio-additional-info h2{
+    margin: 0;
+    line-height: 48px;
+}
+
+.additional-info-content{
+    border-top: 15px solid var(--green);
+    display: grid;
+    grid-template-columns: auto auto;
+    height: calc(100% - 48px);
+}
+
+.leftCol{
+    justify-self: center;
+    justify-items: center;
+    display: grid;
+    grid-template-rows: max-content auto;
+    gap: 1rem;
+    padding: 1.6875rem;
+}
+
+.leftCol img{
+    transition: transform 0.3s;
+}
+
+.leftCol img:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.rightCol{
+    background-color: var(--green);
+    padding: 1rem;
+}

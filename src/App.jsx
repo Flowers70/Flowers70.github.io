@@ -9,6 +9,8 @@ import { Portfolio } from './pages/portfolio'
 import { Articles } from './pages/articles'
 import { Recipes } from './pages/recipes'
 
+import { Take_Action } from './pages/portfolio/take_action'
+
 const underConstruction = () => {
   alert("This site is still undergoing construction. I appreciate your patience and hope you have a great day! ❤️");
 };
@@ -24,6 +26,8 @@ function App() {
       <Route path="/portfolio" element={<Portfolio />} />
       <Route path="/articles" element={<Articles />} />
       <Route path="/recipes" element={<Recipes />} />
+
+      <Route path="/take_action" element={<Take_Action />} />
     </Routes>
   );
 }
