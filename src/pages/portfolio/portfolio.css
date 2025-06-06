@@ -114,3 +114,23 @@
     background-color: var(--green);
     padding: 1rem;
 }
+
+/* Other Content */
+.portfolio-demo{
+    width: 100%;
+    height: 506px;    
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+    flex-direction: column;
+}
+
+.portfolio-demo video{
+    width: 50%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.portfolio-demo button{
+    width: 50%;
+}
