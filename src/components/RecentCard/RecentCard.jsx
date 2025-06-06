@@ -5,7 +5,7 @@ const underConstruction = () => {
     alert("This site is still undergoing construction. I appreciate your patience and hope you have a great day! ❤️");
 };
 
-export function RecentCard({background = "#ffffff", section = "Portfolio", link = "/take_action", title = "Take Action!", description = ""}){
+export function RecentCard({background = "#ffffff", section = "Portfolio", link = "/take-action", title = "Take Action!", description = ""}){
     return(
         <Link to={link}>
         <div className='recentCard'>

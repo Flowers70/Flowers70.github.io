@@ -12,7 +12,7 @@ export function Portfolio(){
                     </div>
                     <img src="/images/Take_Action.png"></img>
                     <p>A to-do app developed using Angular & Express JS</p>
-                    <Link to="/take_action"><button>Learn More</button></Link>
+                    <Link to="/take-action"><button>Learn More</button></Link>
                 </div>
                 <div className="gallery">
                     <ProjectCard />
