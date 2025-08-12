@@ -11,6 +11,8 @@ import { Recipes } from './pages/recipes'
 
 import { Take_Action } from './pages/portfolio/take_action'
 import { Tic_Tac_Toe } from './pages/portfolio/tic_tac_toe'
+import { Arepas } from './pages/recipes/arepas'
+import NewMain from './NewMain'
 
 const underConstruction = () => {
   alert("This site is still undergoing construction. I appreciate your patience and hope you have a great day! ❤️");
@@ -28,8 +30,15 @@ function App() {
       <Route path="/articles" element={<Articles />} />
       <Route path="/recipes" element={<Recipes />} />
 
+      {/* Portfolio */}
       <Route path="/take-action" element={<Take_Action />} />
       <Route path="/tic-tac-toe" element={<Tic_Tac_Toe />} />
+
+      {/* Recipes */}
+      <Route path="/arepa" element={<Arepas />} />
+
+      <Route path="/new" element={<NewMain />} />
+
     </Routes>
   );
 }

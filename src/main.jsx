@@ -61,9 +61,9 @@ function Root(){
   return(
     <>
       <Router basename='/'>
-        <Navbar />
+        {/* <Navbar /> */}
         <App/>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </>
   )
