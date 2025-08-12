@@ -1,7 +1,7 @@
 export function Arepas(){
     return(
         <>
-            <div class="Ingredients">
+            <div className="Ingredients">
                 <h2>Ingredients</h2>
                 <ul>
                     <li>5 cups maseca</li>
@@ -18,7 +18,7 @@ export function Arepas(){
                     <li>1 block of cheese of your choice (pepperjack, extra sharp chedder, swiss, etc.) chopped into cubes</li>
                 </ul>
             </div>
-            <div class="Instructions">
+            <div className="Instructions">
                 Mix the maseca, sugar, butter, mozzarella, and oil in a large bowl. Combine the milk and water. Add the milk and water mixture to the dry mixture in the large bowl. Stir and use hands as needed to combine into consistent mixture.
                 Roll into balls a little larger than golf balls. Then, taking a ball shape it into a bowl and place refried beans and cheese inside. Then, close the bowl and pat to seal shut - should resemble a cylindrical shape.
                 Repeat this for all of the balls. Then, on medium heat over the stove on a greased pan place some of the filled arepas on it and cook until browned. Flip so that both sides are browned and then set the arepa to the side and repeat for the rest.
