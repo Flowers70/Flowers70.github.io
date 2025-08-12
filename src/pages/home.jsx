@@ -1,6 +1,7 @@
 // import { useState } from 'react'
 import { RecentCard } from '../components/RecentCard/RecentCard.jsx'
 // import { readFromFile } from '../utils/fileUtils'
+import { Link } from 'react-router-dom';
 
 export function Home({content = ""}){
     // const [count, setCount] = useState(0)

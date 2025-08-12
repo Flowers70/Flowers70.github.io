@@ -1,7 +1,5 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 import { Home } from './pages/home'
 import { readFromFile } from './utils/fileUtils'
 import { useState } from 'react'
@@ -24,7 +22,8 @@ function App() {
   readFromFile('/data/aboutMe.txt', setAboutMeContent);
 
   return (
-    <Routes>
+    <>
+      <Routes>
       <Route path="/" element={<Home content={aboutMeContent} />} />
       <Route path="/portfolio" element={<Portfolio />} />
       <Route path="/articles" element={<Articles />} />
@@ -40,6 +39,9 @@ function App() {
       <Route path="/new" element={<NewMain />} />
 
     </Routes>
+    <Link to="/new">Click Me</Link>
+    </>
+      
   );
 }
 
