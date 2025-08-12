@@ -1,5 +1,6 @@
 import { RecipeCard } from "../components/RecipeCard/RecipeCard";
 import './recipes.css'
+import { Link } from "react-router-dom";
 
 export function Recipes(){
     return(
@@ -12,7 +13,7 @@ export function Recipes(){
                     </div>
                     <img src="/images/arepa.png"></img>
                     <p>A mouthwatering Columbian food that is a family favorite</p>
-                    <button>Get the Recipe!</button>
+                    <Link to="/arepa"><button>Get the Recipe!</button></Link>
                 </div>
                 <div className="gallery">
                     <RecipeCard />

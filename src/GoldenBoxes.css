@@ -1,0 +1,17 @@
+html{
+    background-color: #DBE9F0;
+}
+
+.BigGoldenBox{
+    margin:auto;
+    display: grid;
+
+    grid-template-columns: auto auto;
+    overflow: hidden;
+
+    background-color: #DBE9F0;
+}
+
+.topL, .bottomL, .R{
+    display: flex;
+}

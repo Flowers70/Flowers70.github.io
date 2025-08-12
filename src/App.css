@@ -5,6 +5,8 @@
   grid-template-columns: max-content auto max-content;
   margin-left: 2.5625rem;
   margin-right: 2.5625rem;
+  max-width: 1500px;
+  margin:auto;
 }
 
 .colB{
