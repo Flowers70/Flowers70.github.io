@@ -10,7 +10,6 @@ import { Recipes } from './pages/recipes'
 import { Take_Action } from './pages/portfolio/take_action'
 import { Tic_Tac_Toe } from './pages/portfolio/tic_tac_toe'
 import { Arepas } from './pages/recipes/arepas'
-import NewMain from './NewMain'
 
 const underConstruction = () => {
   alert("This site is still undergoing construction. I appreciate your patience and hope you have a great day! ❤️");
@@ -36,10 +35,7 @@ function App() {
       {/* Recipes */}
       <Route path="/arepa" element={<Arepas />} />
 
-      <Route path="/new" element={<NewMain />} />
-
     </Routes>
-    <Link to="/new">Click Me</Link>
     </>
       
   );
