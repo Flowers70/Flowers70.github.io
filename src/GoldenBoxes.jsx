@@ -9,12 +9,15 @@ function GoldenBoxes(props){
     // For now I am assuming this is on a laptop.
     let goldenBox = screenH * goldenNmbr;
 
-    if((goldenBox + screenH) > screenW){
-        goldenBox = screenW * (1 - goldenNmbr);
-    }
+    // if((goldenBox + screenH) > screenW){
+    //     goldenBox = screenW * (1 - goldenNmbr);
+    // }
 
-    let bigGoldenBox_Width = goldenBox + (goldenBox * (1 + goldenNmbr));
-    let bigGoldenBox_Height = goldenBox * (1 + goldenNmbr);
+    // let bigGoldenBox_Width = goldenBox + (goldenBox * (1 + goldenNmbr));
+    // let bigGoldenBox_Height = goldenBox * (1 + goldenNmbr);
+
+    let bigGoldenBox_Height = screenH;
+    let bigGoldenBox_Width = screenH * (1 + goldenNmbr);
 
     const bigGoldenBox_Style = {
         width: bigGoldenBox_Width,
@@ -44,23 +47,7 @@ function GoldenBoxes(props){
             </div>
             <div className="R" style={R_Style}>{props.Right}</div>
         </div>
-    )
-}
-
-function NewMain(){
-    const pics = {
-        width: "100%",
-        padding: 0,
-        margin: "auto"
-    };
-
-    return(
-        <GoldenBoxes 
-        topL={<h1 style={{margin:0, color:"#A14584", alignSelf:"flex-end", marginLeft: "auto", fontSize: "2 rem !important"}}>Jacinth Boggess</h1>}
-        bottomL={<img src="./images/Phone.png" style={pics} />}
-        Right={<img src="./images/paperAndPen.png" style={pics}/>}
-        />
     );
 }
 
-export default NewMain;
+export default GoldenBoxes;
