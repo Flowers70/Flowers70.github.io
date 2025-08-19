@@ -1,5 +1,33 @@
 html{
     background-color: #DBE9F0;
+    /* color: var(--black); */
+  
+    font-family: "IBM Plex Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: auto;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
+
+body{
+    margin: 0;
+}
+
+h1{
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    /* font-size: 1.75rem; */
+    /* margin-top: 2.3125rem; */
+}
+
+button{
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 3px 10px #afbec5;
 }
 
 .BigGoldenBox{
@@ -14,4 +42,14 @@ html{
 
 .topL, .bottomL, .R{
     display: flex;
+}
+
+/* This is specific to landing page */
+.R{
+    justify-content: center;
+}
+
+.bottomL{
+    justify-content: center;
+    align-items: center;
 }
