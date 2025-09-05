@@ -1,6 +1,6 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
-import { Home } from './pages/home'
+import { Home, NewMain } from './pages/home'
 import { readFromFile } from './utils/fileUtils'
 import { useState } from 'react'
 import { Portfolio } from './pages/portfolio'
@@ -10,6 +10,7 @@ import { Recipes } from './pages/recipes'
 import { Take_Action } from './pages/portfolio/take_action'
 import { Tic_Tac_Toe } from './pages/portfolio/tic_tac_toe'
 import { Arepas } from './pages/recipes/arepas'
+import AboutMe from './pages/aboutMe'
 
 const underConstruction = () => {
   alert("This site is still undergoing construction. I appreciate your patience and hope you have a great day! ❤️");
@@ -23,7 +24,7 @@ function App() {
   return (
     <>
       <Routes>
-      <Route path="/" element={<Home content={aboutMeContent} />} />
+      <Route path="/" element={<NewMain />} />
       <Route path="/portfolio" element={<Portfolio />} />
       <Route path="/articles" element={<Articles />} />
       <Route path="/recipes" element={<Recipes />} />
@@ -34,6 +35,9 @@ function App() {
 
       {/* Recipes */}
       <Route path="/arepa" element={<Arepas />} />
+
+      {/* About Me */}
+      <Route path="/aboutMe" element={<AboutMe />} />
 
     </Routes>
     </>
