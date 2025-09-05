@@ -23,12 +23,6 @@ h1{
     /* margin-top: 2.3125rem; */
 }
 
-button{
-    background-color: transparent;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 2px 3px 10px #afbec5;
-}
 
 .BigGoldenBox{
     margin:auto;

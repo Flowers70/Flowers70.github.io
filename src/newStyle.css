@@ -1,0 +1,210 @@
+/* Home */
+
+/* Animations */
+@keyframes rotateBox {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-15deg); }
+}
+
+@keyframes rotatePen {
+    from {transform: rotate(-60deg);}
+    to {transform: rotate(-15deg);}
+}
+
+@keyframes fade {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes blankPaper{
+    from {filter: brightness(100%) invert(0);}
+    to {filter: brightness(0%) invert(1);}
+}
+
+@keyframes erasePaper{
+    from {background-color: transparent;}
+    to {background-color: white;}
+}
+
+.papers{
+    position: relative;
+}
+
+.fakePaper{
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    transform: rotate(-15deg) !important;
+}
+
+.animateFakePaper{
+    animation: erasePaper 0.5s ease-in forwards;
+    animation-delay: 0.7s;
+}
+
+.animatePaper{
+    animation: rotateBox 0.7s ease-in forwards;
+}
+
+.animatePen{
+    animation: rotatePen 0.5s ease-in forwards;
+}
+
+.fade{
+    opacity: 0;
+    animation: fade 0.3s ease-in forwards;
+}
+
+/* Top Left */
+.title{
+    margin:0;
+    color: #A14584;
+    align-self: center;
+    transform: translateY(1rem);
+    margin-left: auto;
+    font-size: 2 rem !important;
+}
+
+/* Bottom Left */
+.pics{
+    transform: rotate(-15deg) scale(0.767);
+    width: auto;
+    /* height: 100%; */
+    /* BELOW: This is ratio (0.56) plus the sign of 15 degrees */
+    height: calc(100% / (0.56 + 0.2588) * 0.975);
+    padding: 0;
+}
+
+/* Right */
+.rotated{
+    transform: rotate(15deg) translateY(10%);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    /* BELOW: 1/(Sin(15deg) + Cos(15deg)) * 100 */
+    height: 81.65%;
+    width: 81.65%;
+    box-sizing: border-box;
+}
+
+.button_portfolio{
+    position: absolute;
+    z-index: 2;
+    top: 40%;
+    left: 25%;
+    cursor: pointer;
+}
+
+button{
+    background-color: transparent;
+    border: none;
+    color: #598ca6;
+    text-decoration: underline;
+
+    position: absolute;
+    z-index: 2;
+    top: calc(40% + 30px);
+    left: 25%;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.pen{
+    height: 50%;
+    width: auto;
+    position: absolute;
+    z-index: 1;
+    transform: rotate(-60deg) translate(-65%, 55%);
+    bottom: 0;
+    left: 0;
+    aspect-ratio: 0.2458;
+}
+
+.paper{
+    max-height: 100%;
+    width: auto;
+    padding: 0;
+    margin: auto;
+    aspect-ratio: 0.77;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+/* ------------------------------------ */
+
+/* About Me */
+
+.onLoad{
+    animation: fade 0.7s ease-out forwards reverse;
+}
+
+.aboutMe.paper span{
+    opacity: 0;
+}
+
+.onLoad.text{
+    animation: fade 1s ease-out forwards reverse;
+    animation-delay: 0.5s;
+}
+
+.picContainer{
+    width: 100%;
+    height: 100%;
+    /* BELOW: (aspect-ratio * percentage of parent container) + 10% (due to shifting downward in rotated container)
+              (1-((0.77*81.65)/100 + 0.10))/2 */
+    padding-bottom: 13.565%; /* I need to figure out how to align this with the paper. */
+    box-sizing: border-box;
+}
+
+.picFrame{
+    width: 100%;
+    height: 100%;
+    border: 1rem solid white;
+    box-sizing: border-box;
+    object-fit: cover;
+}
+
+.aboutMe.paper{
+    height: 100%;
+    padding: 2rem;
+    padding-top: 3rem;
+    background-color: white;
+    transform: rotate(-15deg);
+    box-sizing: border-box;
+}
+
+.aboutMe.pen{
+    transform: rotate(-15deg);
+}
+
+.pageInfo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Moves content to bottom */
+    align-items: flex-end; /* Moves content to right */
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+}
+
+.pageInfo div{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.pageInfo div a{
+    color: #598ca6;
+}
+
+.pageInfo h1{
+    color: #A14584;
+    margin: 0;
+}
+
+.text{
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
