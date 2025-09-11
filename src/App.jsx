@@ -1,4 +1,4 @@
-import './App.css'
+// import './App.css'
 import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 import { Home, NewMain } from './pages/home'
 import { readFromFile } from './utils/fileUtils'
