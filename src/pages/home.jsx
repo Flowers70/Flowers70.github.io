@@ -57,34 +57,52 @@ export function Home({content = ""}){
 }
 
 export function NewMain(){
-    const [animate, setAnimate] = useState(false);
+    const [animateAbout, setAnimateAbout] = useState(false);
+    const [animatePortfolio, setAnimatePortfolio] = useState(false);
+
     const navigate = useNavigate();
 
     const underConstruction = () => {
         alert("This site is still undergoing construction. I appreciate your patience and hope you have a great day! ❤️");
     };
 
-    const goToPage = () => {
-        setAnimate(true);
+    const goToAboutMe_Page = () => {
+        setAnimateAbout(true);
     }
+
+    const goToPortfolio_Page = () => {
+        setAnimatePortfolio(true);
+    }
+
+    // const goToPage = (pageName) => {
+    //     if(pageName === "aboutMe"){
+    //         setAnimateAbout(true);
+    //     }else if(pageName === "portfolio"){
+    //         setAnimatePortfolio(true);
+    //     }        
+    // }
 
     const animateEndHandler = () => {
         console.log("ENDED");
-        navigate('/aboutMe');
+        if(animateAbout){
+            navigate('/aboutMe');
+        }else if(animatePortfolio){
+            navigate('/portfolio');
+        }
     }    
 
     return(
         <GoldenBoxes 
-        topL={<h1 className={`title ${animate ? "fade" : ""}`}>Jacinth Boggess</h1>}
-        bottomL={<img className={`pics ${animate ? "fade" : ""}`} src="./images/Phone.png" />}
+        topL={<h1 className={`title ${animateAbout || animatePortfolio ? "fade" : ""}`}>Jacinth Boggess</h1>}
+        bottomL={<img className={`pics ${animateAbout || animatePortfolio ? "fade" : ""}`} src="./images/Phone.png" />}
         Right={
             <div className="rotated">
-                <button className={`button_portfolio ${animate ? "fade" : ""}`} onClick={underConstruction}>Portfolio</button>
-                <button className={animate ? "fade" : ""} onClick={goToPage} role="link">About Me</button>
-                <img className={`pen ${animate ? "animatePen" : ""}`} src="./images/Pen.png"/>
+                <button className={`button_portfolio ${animateAbout || animatePortfolio ? "fade" : ""}`} onClick={goToPortfolio_Page}>Portfolio</button>
+                <button className={animateAbout || animatePortfolio ? "fade" : ""} onClick={goToAboutMe_Page} role="link">About Me</button>
+                <img className={`pen ${animateAbout ? "animatePen" : ""} ${animatePortfolio ? "fade" : ""}`} src="./images/Pen.png"/>
                 <div className='papers'>                    
-                    <div className={`paper fakePaper ${animate ? "animateFakePaper": ""}`} onAnimationEnd={animateEndHandler}></div>
-                    <img className={`paper ${animate ? "animatePaper" : ""}`} src="./images/Paper2.png"/>
+                    <div className={`paper fakePaper ${animateAbout ? "animateFakePaper": ""} ${animatePortfolio ? "fade" : ""}`} onAnimationEnd={animateEndHandler}></div>
+                    <img className={`paper ${animateAbout ? "animatePaper" : ""} ${animatePortfolio ? "fade" : ""}`} src="./images/Paper2.png"/>
                 </div>
             </div> 
         }

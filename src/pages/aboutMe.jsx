@@ -5,10 +5,6 @@ import GoldenBoxes from "../GoldenBoxes";
 function AboutMe(){
     const [loaded, setLoaded] = useState(false);
 
-    const underConstruction = () => {
-        alert("This site is still undergoing construction. I appreciate your patience and hope you have a great day! ❤️");
-    };
-
     useEffect(() => {
         setLoaded(true);
     }, []);
@@ -19,7 +15,7 @@ function AboutMe(){
                 <h1 >About Me</h1>
                 <div>
                     <Link to="/">Jacinth Boggess</Link>
-                    <Link onClick={underConstruction}>Portfolio</Link>
+                    <Link to="/portfolio">Portfolio</Link>
                 </div>
             </div>
         }
