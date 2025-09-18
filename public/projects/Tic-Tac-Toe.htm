@@ -1,0 +1,550 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161520619-1"></script> -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-161520619-1');
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic-Tac-Toe</title>
+  <meta charset="utf-8">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>
+    var oTurn = false;      // Whose turn? True = O; False = X
+    var used = [,,,,,,,,,]; // Which game board cells have been taken (used)
+    var cpu = true;         // Is the computer playing? True = yes; False = no
+    var end = false;        // Game over? True = yes; False = no
+    var wins = [0,0,0,0];   // Keep track of who has won
+    var theme = "t1";       // Color theme selected by user
+
+    // To reset the page
+    function newGame(){
+      used = [,,,,,,,,,];
+      end = false;
+      oTurn = false;
+      document.getElementById("gameMessage").innerHTML = "";
+      document.getElementById("StartGame").style = "display:block";
+      document.getElementById("gameBoard").style = "display:none";
+      
+      // Remove any prior X or O's
+      var i;
+      for (i=1; i<10; i++) {
+        document.getElementById(i).innerHTML = "&nbsp;";
+      }
+    }
+
+    //The beginning setup of the board
+    function start(){
+      document.getElementById("StartGame").style = "display:none";
+      document.getElementById("gameBoard").style = "display:block";
+      if (document.getElementById("NP1").checked == true) {
+        cpu = true;
+        console.log("true")
+      } else {
+        cpu = false;
+        console.log("false")
+      }
+      
+    }
+
+    //Notifies the user about the turn
+    function turn() {
+      var gameMessage = document.getElementById("gameMessage");
+
+      if (cpu == false) {
+        if (oTurn == false){
+          gameMessage.innerHTML = "It is <b>X's</b> turn";
+        } else {
+          gameMessage.innerHTML = "It is <b>O's</b> turn";
+        }
+      } else {
+        if (oTurn == false){
+          gameMessage.innerHTML = "It is <b>your</b> turn";
+        } else {
+          gameMessage.innerHTML = "It is <b>computer's</b> turn";
+        }
+      }
+    }
+
+    // Shows player's selection of theme choice as a preview
+    function themePreview() {
+      var newTheme = document.getElementById("themePicker").value;
+      var y;
+      for (y=1; y <= 9; y++) {
+        var cell = document.getElementById("e" + y);
+        cell.classList.remove(theme);
+        cell.classList.add(newTheme);
+
+        cell = document.getElementById(y);
+        cell.classList.remove(theme);
+        cell.classList.add(newTheme);
+      }
+      
+      document.getElementsByName("ex").forEach(element => {
+        element.classList.remove(theme + "x");
+        element.classList.add(newTheme + "x");
+      });
+      
+      document.getElementsByName("eo").forEach(element => {
+        element.classList.remove(theme + "o");
+        element.classList.add(newTheme + "o");
+      });
+      
+      theme = newTheme;
+      
+    }
+    
+    
+    //Is what happens when a cell is clicked
+    function clicked(cell) {
+      // Ensure game is not already over
+      if (end == true) {
+        return;
+      }
+
+
+      if (used[cell.id - 1] > 0) {
+        // Cell has already been taken
+        document.getElementById("gameMessage").innerHTML = "Please select a different cell";
+      } else {
+        // Cell is open
+        if (oTurn == false) {
+            // Player 1
+            cell.innerHTML = "<h1 class='gameBoard " + theme + "x'>X</h1>";
+            oTurn = true;
+            used[cell.id - 1] = 1;
+            turn();
+            endGame();
+            
+            if (end == false && cpu == true) {
+              //computer player
+              var available= [];
+              var i;
+              for (i=0; i < 9; i++) {
+                if (typeof used[i] === "undefined") {
+                  available.push(i);
+                }
+              }
+              var r = Math.floor(Math.random() * available.length);
+              document.getElementById(available[r] + 1).innerHTML = "<h1 class='gameBoard " + theme + "o'>O</h1>";
+              oTurn = false;
+              used[available[r]] = 2;
+              turn();
+              endGame();
+            }  
+          } else {
+            //No computer player (Player 2)
+            cell.innerHTML = "<h1 class='gameBoard " + theme + "o'>O</h1>";
+            oTurn = false;
+            used[cell.id - 1] = 2;
+            turn();
+            endGame(); 
+        }
+      }
+    }
+
+
+    //Checks to see if the game is over
+    function endGame() {
+      var gameMessage = document.getElementById("gameMessage");
+
+      if (used[0] + used[1] + used[2] == 3 || used[3] + used[4] + used[5] == 3 || used[6] + used[7] + used[8] == 3 || used[0] + used[3] + used[6] == 3 ||used[1] + used[4] + used[7] == 3 || used[2] + used[5] + used[8] == 3 || used[0] + used[4] + used[8] == 3 || used[2] + used[4] + used[6] == 3) {
+        gameMessage.innerHTML = "<a onClick='newGame()'> <b>X won!!!</b> To play again click <u style='color:#33ccff'>Reset</u></a>";
+        wins[0]++;
+        document.getElementById("Xwins").innerHTML = wins[0];
+        console.log(wins);
+        end = true;
+      } else if (used[0] + used[1] + used[2] == 6 || used[3] + used[4] + used[5] == 6 || used[6] + used[7] + used[8] == 6 || used[0] + used[3] + used[6] == 6 ||used[1] + used[4] + used[7] == 6 || used[2] + used[5] + used[8] == 6 || used[0] + used[4] + used[8] == 6 || used[2] + used[4] + used[6] == 6) {
+        gameMessage.innerHTML = "<a onClick='newGame()'> <b>O won!!!</b> To play again click <u style='color:#33ccff'>Reset</u></a>";
+        if (cpu == true) {
+          wins[2]++;
+          document.getElementById("CPUwins").innerHTML = wins[2];
+          console.log(wins);
+        } else {
+          wins[1]++;
+          document.getElementById("Owins").innerHTML = wins[1];
+          console.log(wins);
+        }
+        end = true;
+      } else if (used[0] + used[1] + used[2] + used[3] + used[4] + used[5] + used[6] + used[7] + used[8] > 9) {
+        gameMessage.innerHTML = "<a onClick='newGame()'><b>No one won</b> to play again click <u style='color:#33ccff'>Reset</u></a>";
+        wins[3]++;
+        document.getElementById("Nwins").innerHTML = wins[3];
+        console.log(wins);
+        end = true;
+      } else {
+        end = false;
+      }
+    }
+
+  </script>
+  <style>
+    
+    /* Classes that apply to all objects */
+    table {
+      border-collapse: collapse;
+      text-align: center;
+      vertical-align: center;
+    }
+
+    td, h1 {
+        padding: 0px;
+        margin: 0px;
+        background-color: transparent;
+    }
+    
+    /* Generic classes to apply to multiple objects */
+    /* Standard Settings for all Themes */
+    td.ul {
+        border-top-width: 0px;
+        border-right-width: 2.5px;
+        border-bottom-width: 2.5px;
+        border-left-width: 0px;
+        border-right-style: solid;
+        border-bottom-style: solid;
+    }
+
+    td.um {
+        border-top-width: 0px;
+        border-right-width: 2.5px;
+        border-bottom-width: 2.5px;
+        border-left-width: 2.5px;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+    }
+
+    td.ur {
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: 2.5px;
+        border-left-width: 2.5px;
+        border-bottom-style: solid;
+        border-left-style: solid;
+    }
+
+    td.ml {
+        border-top-width: 2.5px;
+        border-right-width: 2.5px;
+        border-bottom-width: 2.5px;
+        border-left-width: 0px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-left-style: solid;
+    }
+
+    td.mm {
+        border-width: 2.5px;
+        border-style: solid;
+    }
+
+    td.mr {
+        border-top-width: 2.5px;
+        border-right-width: 0px;
+        border-bottom-width: 2.5px;
+        border-left-width: 2.5px;
+        border-top-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+    }
+
+    td.bl {
+        border-top-width: 2.5px;
+        border-right-width: 2.5px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+        border-top-style: solid;
+        border-right-style: solid;
+    }
+
+    td.bm {
+        border-top-width: 2.5px;
+        border-right-width: 2.5px;
+        border-bottom-width: 0px;
+        border-left-width: 2.5px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-left-style: solid;
+    }
+
+    td.br {
+        border-top-width: 2.5px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: 2.5px;
+        border-top-style: solid;
+        border-left-style: solid;
+    }
+
+    
+
+    /* Preview Specific Classes */
+    table.preview {
+      table-layout: fixed;
+      width: 100px;  
+      height: 100px;
+    }
+
+    h1.preview {
+        font-size: 20px;
+    }
+
+    /* Game Board specific classes */
+    table.gameBoard {
+        table-layout: fixed;
+        width: 300px;  
+        /* height: 300px; */
+    }
+
+    h1.gameBoard {
+        font-size: 60px;
+    }
+
+    /* td.gameBoard {
+      height: 96px;
+      width: 96px;
+    } */
+
+
+
+    /* Scoreboard specific classes */
+    table.scoreBoard {
+      table-layout: auto;
+    }
+
+
+          
+          
+
+    /* Theme 1 */
+    td.t1 {
+        background-color: white;
+        border-color: black;
+    }
+
+    h1.t1x {
+        color: red;
+    }
+
+    h1.t1o {
+        color: blue;
+    }
+    /* Theme 2 */
+    td.t2 {background-color:black; border-color: white;}
+    h1.t2x {color:red;}
+    h1.t2o {color: blue;}
+
+    /* Theme 3 */
+    td.t3 {background-color: white; border-color: teal;}
+    h1.t3x {color:rgb(0, 255, 234);}
+    h1.t3o {color: rgb(114, 253, 86);}
+
+    /* Theme 4 */
+    td.t4 {background-color:black; border-color: rgb(4, 248, 187);}
+    h1.t4x {color:white;}
+    h1.t4o {color: rgb(99, 245, 106);}
+
+    /* Theme 5 */
+    td.t5 {background-color:white; border-color:  black;}
+
+    h1.t5x {color:red;}
+    
+    h1.t5o {color: green;}
+    /* Theme 6 */
+    td.t6 {
+        background-color:rgb(245, 168, 222);
+        border-color:  rgb(29, 204, 13);
+    }
+
+    h1.t6x {
+        color:green;
+    }
+    
+    h1.t6o {
+        color: rgb(243, 60, 90);
+    }
+
+    /* Theme 7 */
+    td.t7 {
+        background-color:rgb(27, 172, 164);
+        border-color:  white;
+    }
+
+    h1.t7x {
+        color: white;
+    }
+    
+    h1.t7o {
+        color: white;
+    }
+
+    /* Theme 8 */
+    td.t8 {background-color: purple; border-color: white;}
+    h1.t8x {color: white;}
+    h1.t8o {color: white;}
+
+    /* Theme 9 */
+    td.t9 {background-color: rgb(255, 74, 180); border-color: white;}
+    h1.t9x {color: white;}
+    h1.t9o {color: white;}
+    
+     /* Theme 10 */
+     td.t10 {background-color: green; border-color: white;}
+    h1.t10x {color: white;}
+    h1.t10o {color: white;}
+
+     /* Theme 11 */
+     td.t11 {background-color: blue; border-color: white;}
+    h1.t11x {color: white;}
+    h1.t11o {color: white;}
+
+    /* Theme 12 */
+    td.t12 {background-color: white; border-color: teal;}
+    h1.t12x {color: teal;}
+    h1.t12o {color:teal;}
+
+    /* Theme 13 */
+    td.t13 {background-color: white; border-color: purple;}
+    h1.t13x {color: purple;}
+    h1.t13o {color: purple;}
+
+    /* Theme 14 */
+    td.t14 {background-color: white; border-color: rgb(255, 74, 180);}
+    h1.t14x {color: rgb(255, 74, 180);}
+    h1.t14o {color: rgb(255, 74, 180);}
+
+  /* Theme 15 */
+  td.t15 {background-color: white; border-color: green;}
+    h1.t15x {color: green;}
+    h1.t15o {color: green;}
+
+    /* Theme 16 */
+  td.t16 {background-color: white; border-color: blue;}
+    h1.t16x {color: blue;}
+    h1.t16o {color: blue;}
+
+    /* Theme 17 */
+  td.t17 {background-color: red; border-color: rgb(5, 5, 146);}
+    h1.t17x {color: white;}
+    h1.t17o {color: rgb(5, 5, 146);}
+
+  </style>
+</head>
+
+<body onload="newGame()">
+<h2>Tic-Tac-Toe</h2>
+<a style="color:Black" href="https://flowers70.github.io/">Home</a>
+<a style="color:#33ccff" onClick="newGame()">Reset</a>
+<br />
+
+<div id="StartGame">
+  <h1>Start a New Game</h1>
+  <h2>How many players are playing?</h2>
+  <div>
+    <input type="radio" id="NP1" name="numPlayers" value="1" checked="true"><label>1 player (Play with a computer)</label><br />
+    <input type="radio" id="NP2" name="numPlayers" value="2"><label>2 players (Play with a friend)</label><br />
+  </div>
+  <br />
+
+  <table>
+    <tr>
+      <td>
+        <table class="preview">
+          <tr>
+            <td id="e1" class="ul t1"><h1 name="ex" class="preview t1x">X</h1></td>
+            <td id="e2" class="um t1"><h1 name="eo" class="preview t1o">O</h1></td>
+            <td id="e3" class="ur t1"><h1 name="eo" class="preview t1o">O</h1></td>
+          </tr>
+          <tr>
+            <td id="e4" class="ml t1">&nbsp</td>
+            <td id="e5" class="mm t1"><h1 name="ex" class="preview t1x">X</h1></td>
+            <td id="e6" class="mr t1">&nbsp</td>
+          </tr>
+          <tr>
+            <td id="e7" class="bl t1">&nbsp</td>
+            <td id="e8" class="bm t1"><h1 name="ex" class="preview t1x">X</h1></td>
+            <td id="e9" class="br t1"><h1 name="eo" class="preview t1o">O</h1></td>
+          </tr>
+        </table>
+      </td>
+      <td width="20px">&nbsp;</td>
+      <td>Select a Theme<br />
+        <select id="themePicker" onchange="themePreview()">
+          <option value="t1">Original</option>
+          <option value="t2">High Contrast</option>
+          <option value="t3">Mint</option>
+          <option value="t4">Glow</option>
+          <option value="t5">Christmas</option>
+          <option value="t6">Floral</option>
+          <option value="t7">Teal A</option>
+          <option value="t8">Purple A</option>
+          <option value="t9">Pink A</option>
+          <option value="t10">Green A</option>
+          <option value="t11">Blue A</option>
+          <option value="t12">Teal B</option>
+          <option value="t13">Purple B</option>
+          <option value="t14">Pink B</option>
+          <option value="t15">Green B</option>
+          <option value="t16">Blue B</option>
+          <option value="t17">American</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+  <br />
+  <div><button onclick="start()">Start Game</button></div>
+</div>
+
+<div id="gameBoard">
+  <table class="gameBoard" id="tttboard">
+    <tr>
+      <td style="height: 98px;" id="1" class ="ul t1" onClick="clicked(this)">&nbsp</td>
+      <td id="2" class ="um t1" onClick="clicked(this)">&nbsp</td>
+      <td id="3" class="ur t1" onClick="clicked(this)">&nbsp</td>
+    </tr>
+    <tr>
+      <td style="height: 98px;" id="4" class ="ml t1" onClick="clicked(this)">&nbsp</td>
+      <td id="5" class ="mm t1" onClick="clicked(this)">&nbsp</td>
+      <td id="6" class="mr t1" onClick="clicked(this)">&nbsp</td>
+    </tr>
+    <tr>
+      <td style="height: 98px;" id="7" class ="bl t1" onClick="clicked(this)">&nbsp</td>
+      <td id="8" class ="bm t1" onClick="clicked(this)">&nbsp</td>
+      <td id="9" class ="br t1" onClick="clicked(this)">&nbsp</td>
+    </tr>
+  </table>
+
+  <div id="gameMessage"></div>
+
+  <table id="scoreBoard" class="scoreBoard">
+    <tr>
+      <td><b>Wins</b></td>
+    </tr>
+    <tr>
+      <td>X: </td>
+      <td id="Xwins"></td>
+    </tr>
+    <tr>
+      <td>O: </td>
+      <td id="Owins"></td>
+    </tr>
+    <tr>
+      <td>Computer: </td>
+      <td id="CPUwins"></td>
+    </tr>
+    <tr>
+      <td>No one: </td>
+      <td id="Nwins"></td>
+    </tr>
+  </table>
+</div>
+
+</body>
+</html>
