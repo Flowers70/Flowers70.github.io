@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { JournalEntry } from "../components/JournalEntry/JournalEntry";
 
 export function Portfolio(){
     let goldenNmbr = 0.618;
@@ -40,40 +41,11 @@ export function Portfolio(){
                     </div>
                     {/* Right page */}
                     <div className="page">
-                        {/* Just an idea with pictures. Pictures may require too much space. */}
-                        <div className="table">
-                            <Link onClick={workInProgress}>
-                                <img alt="Some picture" src="./images/tic-tac-toe.png"></img>
-                                <div>
-                                    <div><h2>Tic-Tac-Toe</h2> August 20, 2020</div>
-                                    <div><ul><li>The first web application I created using HTML, CSS, and JS!</li></ul></div>
-                                </div>                                
-                            </Link>
-                            <Link onClick={workInProgress}>
-                                <img alt="Some picture"></img>
-                                <div>
-                                    <div><h2>Password Generator</h2> May 27, 2021</div>
-                                    <div><ul><li>I wanted to create something useful while continuing to learn JS.</li></ul></div>
-                                </div>                                
-                            </Link>
-                        </div>
-                        {/* <ul>
-                            <Link>
-                                <li><h2>Tic-Tac-Toe</h2> - August 20, 2020
-                                    <ul>
-                                        <li>The first web application I created using HTML, CSS, and JS!</li>
-                                    </ul>
-                                </li>
-                            </Link>
-                            <Link>
-                                <li><h2>Password Generator</h2> - May 27, 2021
-                                <ul>
-                                    <li>I wanted to create something useful while continuing to learn JS.</li>
-                                </ul>
-                                </li>
-                            </Link>
-                            
-                        </ul> */}
+                        <JournalEntry oldProject="true" navLink="/projects/Tic-Tac-Toe.htm" image="./images/tic-tac-toe.png" title="Tic-Tac-Toe"
+                        date="August 20, 2020" bulletPoints={["The first web application I created using HTML, CSS, and JS!"]}></JournalEntry>
+                        
+                        <JournalEntry oldProject="true" navLink="/projects/PasswordGenerator.html" image="./images/keys1.png" title="Password Generator" date="May 27, 2021"
+                        bulletPoints={["I wanted to create something useful while continuing to learn JS."]}></JournalEntry>
                     </div>
                 </div>                
             </div>
