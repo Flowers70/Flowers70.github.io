@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+:root {
+  --black: #200C08;
+  --white: #FEFEFC;
+  --red: #A70000;
+  --orange: #FD4F04;
+  --yellow: #FFC301;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: 'JetBrains Mono', monospace;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+div {
+  box-sizing: border-box;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  width: 100%;
+  height: 100vh;
+}
+
+.header {
+  padding-left: 30px;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2rem;
+  width: 100%;
+  padding: 7.5px 0 7.5px 0;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  width: 90%;
+  margin-top: 0.5rem;
+  font-family: 'Comic Neue', cursive;
+  font-size: 1rem;
+  gap: 0.5rem;
+}
+
+.impact-statement {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  width: 100%;
+
+  padding: 32px;
 }
 
-.App-link {
-  color: #61dafb;
+.footer-line {
+  height: 49px;
+  background-color: var(--black);
+
+  z-index: 1;
+  position: relative;
+  margin: -1px 32px 41px 32px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.profile-picture-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-top: -89px;
+
+  z-index: 0;
+  position: absolute;
+}
+
+.impact-title {
+  font-size: 3rem;
+  color: var(--orange);
+  line-height: 2;
+}
+
+.impact-description {
+  font-size: 2rem;
+  line-height: 2;
+}
+
+.classy-line {
+  width: 90%;
+  height: 21px;
+  background-color: var(--red);
 }
