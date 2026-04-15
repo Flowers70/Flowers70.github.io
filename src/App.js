@@ -25,6 +25,13 @@ function App() {
       <div className="page-container profile-picture-container">
         <img src="PXL_20241119_200918417.PORTRAIT~2.jpg" alt="" />
       </div>
+
+      <div className="adjustment-box">
+        <div className="personal-statement">
+          Technology lead focused on engineering data-driven solutions to optimize business operations. Managed daily customer relations to gather direct consumer feedback for iterative system improvements. Architected a custom inventory management application (React) and pivoted to Power BI development to deliver immediate financial visibility through ABC and Break-Even analyses. Developed an adaptive Break-Even model and used operational averages to provide clear visibility into gross margins and revenue trends. Seeking a role within an operationally mature organization to apply my technical rigor and grow as a Software Engineer.
+        </div>
+      </div>
+
     </div>
   );
 }
