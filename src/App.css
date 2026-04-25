@@ -145,6 +145,7 @@ h2 {
   align-items: center;
 
   background-image: linear-gradient(75deg, var(--orange), var(--red));
+  color: var(--black);
   font-family: 'JetBrains Mono', monospace;
 }
 
