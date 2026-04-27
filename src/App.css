@@ -50,6 +50,7 @@ h2 {
   font-size: 24px;
   font-weight: 500;
   line-height: 150%;
+  margin: 1rem 0 1rem 0;
 
   font-family: 'JetBrains Mono', monospace;
 }
@@ -116,7 +117,7 @@ h2 {
 .adjustment-box {
   margin-top: -89px;
   font-family: 'Comic Neue';
-  padding: 0 2rem 0 2rem;
+  padding: 0 2rem 2.5rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -137,7 +138,7 @@ h2 {
   padding: 0 10px 0 10px;
 }
 
-.project-title{
+.hide-and-show .title{
   padding: 10px;
   font-size: 24px;
   display: flex;
@@ -149,23 +150,94 @@ h2 {
   font-family: 'JetBrains Mono', monospace;
 }
 
-.project{
+.hide-and-show{
   display: flex;
   flex-direction: column;
   gap: 0;
 }
 
-.project-description{
+.hide-and-show .description{
   padding: 0.5rem;
   border: 1px solid var(--orange);
   border-top: 0;
 }
 
+/* Technical Skills */
+.tech-skills ul{
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  gap: 1rem;
+}
+
+.tech-skills ul ul, .skills-applied, .accomplishments{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  row-gap: 0.5rem;
+
+  list-style-type: none;
+  padding: 0;
+}
+
+.tech-skills ul ul:last-child{
+  margin-bottom: 0;
+}
+
+.tech-skills ul ul li, .skills-applied li, .accomplishments li{
+  background-color: var(--red);
+  padding: 1px 5px;
+  border: 1px solid var(--orange);
+  /* padding: 0 5px; */
+}
+
 /* Experience Section */
+.experiences{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 li{
   line-height: 2;
 }
 
+/* .experiences .experience:last-child ul{
+  margin-bottom: 0;
+} */
+
 .experiences span{
   color: var(--yellow);
+}
+
+.job-summary{
+  margin: 1rem 0 1rem 0;
+  font-style: italic;
+}
+
+.job-title{
+  color: var(--yellow);
+}
+
+.experience .hide-and-show .title{
+  background-image: none;
+  color: var(--white);
+  border: 1px solid var(--white);
+  font-size: 1rem;
+}
+
+.experience .hide-and-show .description{
+  border-color: var(--white);
+}
+
+/* Education */
+.degree{
+  color: var(--yellow);
+}
+
+.accomplishments{
+  margin-top: 1rem;
+  font-size: 1.07rem;
+  font-weight: bold;
 }

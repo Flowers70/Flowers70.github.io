@@ -1,16 +1,16 @@
 import { useState } from "react";
 
-export default function Project({title, children}) {
+export default function HideAndShow({title, children}) {
     const [isOpen, setisOpen] = useState(false);
 
     return (
-        <div className="project">
-            <div className="project-title" onClick={() => setisOpen(!isOpen)}>
+        <div className="hide-and-show">
+            <div className="title" onClick={() => setisOpen(!isOpen)}>
               <div>{title}</div>
               <div>⌄</div>
             </div>
             {isOpen && (
-              <div className="project-description">
+              <div className="description">
                 {children}
               </div>
             )}            
