@@ -29,7 +29,7 @@ function App() {
 
       <div className="adjustment-box">
         <div className="personal-statement">
-          Technology lead focused on engineering data-driven solutions to optimize business operations. Acted as a primary stakeholder interface to gather direct consumer feedback for iterative system improvements. Architected a custom inventory management application (React) and pivoted to Power BI development to deliver immediate financial visibility through ABC and Break-Even analyses. Developed an adaptive Break-Even model and used operational averages to provide clear visibility into gross margins and revenue trends. Seeking a role within an operationally mature organization to apply my technical rigor and grow as a Software Engineer.
+          Software Engineer and CS Cum Laude Graduate focused on engineering data-driven solutions to optimize business operations. Acted as a primary stakeholder interface to gather direct consumer feedback for iterative system improvements. Architected a custom inventory management application (React) and pivoted to Power BI development to deliver immediate financial visibility through ABC and Break-Even analyses. Developed an adaptive Break-Even model and used operational averages to provide clear visibility into gross margins and revenue trends. Seeking a role within an operationally mature organization to apply my technical rigor and grow as a Software Engineer.
         </div>
 
         <h2>Projects</h2>
@@ -107,9 +107,9 @@ function App() {
             
             <HideAndShow title="View Impact">
               <ul className='job-experience-descriptors'>
-                <li>Solved real-world problems through a highly analytical approach employing data structures, storage systems, cloud infrastructure, front-end frameworks, and other technical tools.</li>
-                <li>Collaborated efficiently in teams of technical and non-technical individuals in a dynamic environment with evolving objectives.</li>
-                <li>Architected and began building an internal-facing application for data ingestion, transformation, retrieval, and integration with the <span>Square POS SDK</span> and other internal systems (aka DB and future additions).</li>
+                <li>Employed data structures, storage systems, cloud infrastructure, and front-end frameworks.</li>
+                <li>Collaborated in a dynamic environment with evolving objectives.</li>
+                <li>Architected an internal-facing application for data ingestion, transformation, retrieval, and integration with the <span>Square POS SDK</span> and an internal DB.</li>
               </ul>
             </HideAndShow> 
 
