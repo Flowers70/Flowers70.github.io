@@ -8,7 +8,7 @@ export default function Experiences() {
 
             <div className='experience'>
                 <div className='job-title'><b>Technology Lead</b> | OZY Community Stores</div>
-                <div className='job-experience-time'>December 2025 - April 2026</div>
+                <div className='job-experience-time'>December 2025 - May 2026</div>
 
                 <div className='job-summary'>Directing end-to-end technical strategy and financial modeling as the founding Technology Lead for a retail startup.</div>
                 

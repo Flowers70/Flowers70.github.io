@@ -34,6 +34,103 @@
         /* width: 250px; */
     }
 
+    /* Achievements - Far right column */
+
+    .achievements{
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .achievements div{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+    }
+
+    .achievements div img{
+        width: 1.625rem;
+        height: 1.625rem;
+    }
+
+    .modal{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        z-index: 9999;
+        background-color: #200c08c3;
+
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */
+
+        overflow-y: auto;
+        align-items: flex-start;
+        padding: 2rem;
+
+        animation: fadeInOverlay 0.25s ease-out forwards;
+    }
+
+    .modal .content-box{
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        border: 5px solid var(--red);
+        background-color: var(--black);
+
+        padding: 2rem;
+        padding-top: 1rem;
+        max-width: 700px;
+
+        margin-top: auto;
+        margin-bottom: auto;
+
+        animation: scaleUpContent 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    .modal .close-button{
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 1rem;
+        cursor: pointer;
+    }
+
+    .modal ul{
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    @keyframes fadeInOverlay {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes scaleUpContent {
+        from {
+            opacity: 0;
+            transform: scale(0.93) translateY(10px); /* Starts slightly smaller and lower */
+        }
+        to {
+            opacity: 1;
+            transform: scale(1) translateY(0); /* Snaps to crisp center focus */
+        }
+    }
+
+    /* ----------------------------- */
+
     .page-container{
         width: 43.75rem !important;
     }

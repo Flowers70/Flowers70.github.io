@@ -1,3 +1,35 @@
+:root {
+  --black: #200C08;
+  --white: #FEFEFC;
+  --red: #A70000;
+  --orange: #FD4F04;
+  --yellow: #FFC301;
+}
+
 div{
     box-sizing: border-box;
+}
+
+/* Scrollbar */
+/* 1. The entire scrollbar area */
+::-webkit-scrollbar {
+  width: 1rem;    /* Width of vertical scrollbar */
+  height: 1rem;   /* Height of horizontal scrollbar */
+  margin-right: 6px;
+}
+
+/* 2. The track (the background of the scrollbar) */
+/* ::-webkit-scrollbar-track {
+} */
+
+/* 3. The thumb (the part you grab) */
+::-webkit-scrollbar-thumb {
+  background: var(--red); 
+  border: 4px solid var(--black);
+}
+
+/* 4. The thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--orange); 
+  cursor: pointer;
 }
