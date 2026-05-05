@@ -8,10 +8,11 @@ import Presentation from './Components/Hero/Presentation';
 import Introduction from './Components/Hero/Introduction';
 import Header from './Components/Header';
 import { useEffect, useState } from 'react';
+import Achievements from './Components/Hero/Achievements';
 
 function App() {
   const [deviceWidth, setDeviceWidth] = useState(window.innerWidth);
-
+  
   // useEffect - To make it responsive should they resize the viewport
   useEffect(() => {
     const handleResize = () => setDeviceWidth(window.innerWidth);
@@ -67,13 +68,7 @@ function App() {
             </div>
           </div> 
           <div className='right'>
-
-            <h2>Achievements</h2>
-            <ul>
-              <li>GitHub Stats</li>
-              <li>Use line icons to make the visual weight of the side bars balanced</li>
-              <li>Something</li>
-            </ul>
+            <Achievements/>        
           </div>
         </div>
       </div>
