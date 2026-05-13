@@ -27,7 +27,7 @@ div {
   justify-content: space-between;
 
   width: 100%;
-  height: calc(100svh - 118px);
+  height: calc(100svh - 107px);
 }
 
 .header {
@@ -120,8 +120,9 @@ h2 {
 
 .classy-line {
   width: 90%;
-  height: 21px;
+  height: 10px;
   background-color: var(--red);
+  box-shadow: 0 0 7px var(--red);
 }
 
 .adjustment-box {
@@ -188,7 +189,7 @@ h2 {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1rem;
-  row-gap: 0.5rem;
+  row-gap: 1rem;
 
   list-style-type: none;
   padding: 0;

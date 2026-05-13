@@ -8,6 +8,7 @@
 
 div{
     box-sizing: border-box;
+    cursor: default;
 }
 
 /* Scrollbar */
