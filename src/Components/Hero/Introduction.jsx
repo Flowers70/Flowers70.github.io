@@ -2,7 +2,7 @@ export default function Introduction() {
     return (
         <>
             <div className="personal-statement">
-                Software Engineer and CS Cum Laude Graduate focused on engineering data-driven solutions to optimize business operations. Acted as a primary stakeholder interface to gather direct consumer feedback for iterative system improvements. Architected a custom inventory management application (React) and pivoted to Power BI development to deliver immediate financial visibility through ABC and Break-Even analyses. Developed an adaptive Break-Even model and used operational averages to provide clear visibility into gross margins and revenue trends. Seeking a role within an operationally mature organization to apply my technical rigor and grow as a Software Engineer.
+                Early-career Software Engineer and CS Cum Laude graduate with experience in production systems, test automation, and data-driven operational improvements. Contributed to a logging migration initiative projected to reduce costs by ~40% and prototyped internal tools to help a small business better understand POS data and store operations. Strong foundation in Python, SQL, and JavaScript with a focus on reliability, clarity, and continuous learning.
             </div>
         </>
     )
