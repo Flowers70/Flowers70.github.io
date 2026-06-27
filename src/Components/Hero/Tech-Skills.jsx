@@ -11,18 +11,12 @@ export default function TechSkills() {
                     <li>Python</li>
                     <li>SQL</li>
                     <li>TypeScript</li>
-                    <li>Java</li>
-                    <li>PHP</li>
-                    <li>C#</li>
-                    <li>C++</li>
-                    <li>C</li>
                 </ul>
                 <li>Frameworks & Tools</li>
                 <ul>
                     <li>Angular</li>
                     <li>Cypress</li>
                     <li>ReactJS</li>
-                    <li>Flask</li>
                     <li>Jira</li>
                     <li>Confluence</li>
                     <li>LooperPro</li>
